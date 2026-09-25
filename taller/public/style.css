@@ -1,0 +1,714 @@
+/* =========================================
+   REINICIO
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   PÁGINA COMPLETA
+========================================= */
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(64, 89, 255, 0.35),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 95% 95%,
+            rgba(61, 55, 220, 0.30),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #050b20 0%,
+            #09132f 55%,
+            #12184a 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   CUERPO / TARJETA PRINCIPAL
+========================================= */
+
+body {
+    position: absolute;
+
+    width: calc(100% - 60px);
+    max-width: 730px;
+
+    min-height: 505px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 28px 20px 20px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: auto auto auto;
+
+    column-gap: 12px;
+
+    color: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(19, 40, 82, 0.82),
+            rgba(7, 20, 49, 0.88)
+        );
+
+    border: 1px solid
+        rgba(91, 123, 226, 0.32);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(18px);
+
+    overflow: hidden;
+
+    align-content: center;
+}
+
+
+/* =========================================
+   DECORACIÓN SUPERIOR IZQUIERDA
+========================================= */
+
+html::before {
+    content: "";
+
+    position: fixed;
+
+    width: 240px;
+    height: 240px;
+
+    top: -115px;
+    left: -75px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(69, 93, 255, 0.75),
+            rgba(65, 82, 210, 0.20)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DECORACIÓN INFERIOR DERECHA
+========================================= */
+
+html::after {
+    content: "";
+
+    position: fixed;
+
+    width: 270px;
+    height: 270px;
+
+    right: -150px;
+    bottom: -145px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(82, 106, 255, 0.30);
+
+    box-shadow:
+        -25px -20px 0
+        rgba(70, 78, 220, 0.13),
+
+        -50px -40px 0
+        rgba(70, 78, 220, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   REGISTRO + LOGIN
+========================================= */
+
+.formulario-registrarse,
+.formulario-iniciar-sesion {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 305px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 46, 94, 0.58),
+            rgba(9, 25, 57, 0.62)
+        );
+
+    border: 1px solid
+        rgba(90, 121, 220, 0.28);
+
+    border-radius: 11px;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.025);
+
+    z-index: 2;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Registro */
+
+.formulario-registrarse {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Login */
+
+.formulario-iniciar-sesion {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+/* =========================================
+   EFECTO TARJETAS
+========================================= */
+
+.formulario-registrarse:hover,
+.formulario-iniciar-sesion:hover {
+
+    border-color:
+        rgba(102, 132, 239, 0.42);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(24, 49, 99, 0.64),
+            rgba(10, 27, 61, 0.67)
+        );
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.formulario-registrarse h2,
+.formulario-iniciar-sesion h2 {
+
+    position: relative;
+
+    margin-bottom: 27px;
+
+    padding-bottom: 10px;
+
+    font-size: 19px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+/* Línea decorativa */
+
+.formulario-registrarse h2::after,
+.formulario-iniciar-sesion h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 34px;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7655ff,
+            #438ff5
+        );
+}
+
+
+/* =========================================
+   FORMULARIOS
+========================================= */
+
+#formulario-registro,
+#formulario-login {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+#formulario-registro input,
+#formulario-login input {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 13px;
+
+    border-radius: 9px;
+
+    border: 1px solid
+        rgba(91, 124, 223, 0.36);
+
+    outline: none;
+
+    background:
+        rgba(6, 19, 46, 0.66);
+
+    color: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Placeholder */
+
+#formulario-registro input::placeholder,
+#formulario-login input::placeholder {
+
+    color: #8795bd;
+
+    opacity: 1;
+}
+
+
+/* Campo seleccionado */
+
+#formulario-registro input:focus,
+#formulario-login input:focus {
+
+    border-color:
+        #6688ed;
+
+    background:
+        rgba(7, 21, 51, 0.88);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(86, 111, 230, 0.10);
+}
+
+
+/* =========================================
+   BOTONES REGISTRAR / LOGIN
+========================================= */
+
+#formulario-registro button,
+#formulario-login button {
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 1px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    color: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            100deg,
+            #7850ff 0%,
+            #4774f4 100%
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(67, 86, 218, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+#formulario-registro button:hover,
+#formulario-login button:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 9px 22px
+        rgba(67, 86, 218, 0.38);
+}
+
+
+/* Click */
+
+#formulario-registro button:active,
+#formulario-login button:active {
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   MENSAJE GENERAL
+========================================= */
+
+#mensaje {
+
+    grid-column: 1 / 3;
+
+    grid-row: 2;
+
+    width: 100%;
+
+    min-height: 1px;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #9aa8cc;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RECURSO PROTEGIDO
+========================================= */
+
+.seccion-protegida {
+
+    grid-column: 1 / 3;
+
+    grid-row: 3;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding-top: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* =========================================
+   LÍNEAS LATERALES
+========================================= */
+
+.seccion-protegida::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 10px;
+
+    width: calc(50% - 115px);
+
+    height: 1px;
+
+    background:
+        rgba(89, 118, 214, 0.28);
+}
+
+
+.seccion-protegida::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 10px;
+
+    width: calc(50% - 115px);
+
+    height: 1px;
+
+    background:
+        rgba(89, 118, 214, 0.28);
+}
+
+
+/* =========================================
+   TÍTULO RECURSO PROTEGIDO
+========================================= */
+
+.seccion-protegida h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 12px;
+
+    margin-bottom: 12px;
+
+    background:
+        rgba(10, 26, 57, 0.90);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   BOTÓN RECURSO
+========================================= */
+
+#acceso-protegido {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 160px;
+
+    height: 34px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    border: 1px solid
+        rgba(91, 119, 218, 0.30);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 76, 153, 0.58),
+            rgba(43, 63, 131, 0.58)
+        );
+
+    color: #ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.16);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+#acceso-protegido:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 88, 174, 0.70),
+            rgba(50, 72, 151, 0.70)
+        );
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MENSAJE RECURSO
+========================================= */
+
+#mensaje-protegido {
+
+    margin-top: 7px;
+
+    color: #8d9bc0;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    html {
+        overflow-y: auto;
+    }
+
+    body {
+
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        min-height: auto;
+
+        margin: 20px auto;
+
+        padding: 20px 15px;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 15px;
+    }
+
+
+    .formulario-registrarse,
+    .formulario-iniciar-sesion {
+
+        grid-column: 1;
+
+        min-height: auto;
+    }
+
+
+    .formulario-registrarse {
+        grid-row: 1;
+    }
+
+
+    .formulario-iniciar-sesion {
+        grid-row: 2;
+    }
+
+
+    #mensaje {
+
+        grid-column: 1;
+
+        grid-row: 3;
+    }
+
+
+    .seccion-protegida {
+
+        grid-column: 1;
+
+        grid-row: 4;
+    }
+
+
+    .seccion-protegida::before,
+    .seccion-protegida::after {
+
+        width: 20%;
+    }
+}
